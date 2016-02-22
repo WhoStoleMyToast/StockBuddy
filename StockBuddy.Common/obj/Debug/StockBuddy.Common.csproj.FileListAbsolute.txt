@@ -1,0 +1,9 @@
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\bin\Debug\StockBuddy.Common.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\bin\Debug\StockBuddy.Common.pdb
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\bin\Debug\AutoMapper.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\bin\Debug\StockBuddy.Core.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\bin\Debug\StockBuddy.Core.pdb
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\bin\Debug\AutoMapper.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\obj\Debug\StockBuddy.Common.csprojResolveAssemblyReference.cache
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\obj\Debug\StockBuddy.Common.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Common\obj\Debug\StockBuddy.Common.pdb
