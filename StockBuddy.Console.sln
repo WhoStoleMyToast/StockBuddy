@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuddy.Console", "StockBuddy.Console\StockBuddy.Console.csproj", "{3F414A2A-D323-47D8-99A5-3866FEBADB8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuddy.Data", "StockBuddy.Data\StockBuddy.Data.csproj", "{DAF46BBF-6E2D-47D7-ADB1-6AB343A01AB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuddy.Core", "StockBuddy.Core\StockBuddy.Core.csproj", "{AEC723E5-484F-4C7E-90D1-85BA678DCFDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuddy.Common", "StockBuddy.Common\StockBuddy.Common.csproj", "{3325F4B7-1502-4E66-8215-D05D9506B08D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuddy.Sync", "StockBuddy.Sync\StockBuddy.Sync.csproj", "{1FA95B7D-4CDF-49D5-9D73-CC8EACEBC087}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuddy.Realtime", "StockBuddy.Realtime\StockBuddy.Realtime.csproj", "{740DA498-4E23-4190-9BE9-0952C1A378B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuddy.Services", "StockBuddy.Services\StockBuddy.Services.csproj", "{99B03C67-0C7D-4E53-9000-FBCB33B97395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockBuddy.Stock", "StockBuddy.Stock\StockBuddy.Stock.csproj", "{ECA98365-D916-4EE9-91A2-BA79CABD87DB}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://enderjim.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = StockBuddy.Console\\StockBuddy.Console.csproj
+		SccProjectName1 = StockBuddy.Console
+		SccLocalPath1 = StockBuddy.Console
+		SccProjectUniqueName2 = StockBuddy.Data\\StockBuddy.Data.csproj
+		SccProjectName2 = StockBuddy.Data
+		SccLocalPath2 = StockBuddy.Data
+		SccProjectUniqueName3 = StockBuddy.Core\\StockBuddy.Core.csproj
+		SccProjectName3 = StockBuddy.Core
+		SccLocalPath3 = StockBuddy.Core
+		SccProjectUniqueName4 = StockBuddy.Common\\StockBuddy.Common.csproj
+		SccProjectName4 = StockBuddy.Common
+		SccLocalPath4 = StockBuddy.Common
+		SccProjectUniqueName5 = StockBuddy.Sync\\StockBuddy.Sync.csproj
+		SccProjectName5 = StockBuddy.Sync
+		SccLocalPath5 = StockBuddy.Sync
+		SccProjectUniqueName6 = StockBuddy.Realtime\\StockBuddy.Realtime.csproj
+		SccProjectName6 = StockBuddy.Realtime
+		SccLocalPath6 = StockBuddy.Realtime
+		SccProjectUniqueName7 = StockBuddy.Services\\StockBuddy.Services.csproj
+		SccProjectName7 = StockBuddy.Services
+		SccLocalPath7 = StockBuddy.Services
+		SccProjectUniqueName8 = StockBuddy.Stock\\StockBuddy.Stock.csproj
+		SccProjectName8 = StockBuddy.Stock
+		SccLocalPath8 = StockBuddy.Stock
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F414A2A-D323-47D8-99A5-3866FEBADB8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F414A2A-D323-47D8-99A5-3866FEBADB8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F414A2A-D323-47D8-99A5-3866FEBADB8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F414A2A-D323-47D8-99A5-3866FEBADB8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF46BBF-6E2D-47D7-ADB1-6AB343A01AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF46BBF-6E2D-47D7-ADB1-6AB343A01AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF46BBF-6E2D-47D7-ADB1-6AB343A01AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF46BBF-6E2D-47D7-ADB1-6AB343A01AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC723E5-484F-4C7E-90D1-85BA678DCFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC723E5-484F-4C7E-90D1-85BA678DCFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC723E5-484F-4C7E-90D1-85BA678DCFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC723E5-484F-4C7E-90D1-85BA678DCFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3325F4B7-1502-4E66-8215-D05D9506B08D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3325F4B7-1502-4E66-8215-D05D9506B08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3325F4B7-1502-4E66-8215-D05D9506B08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3325F4B7-1502-4E66-8215-D05D9506B08D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FA95B7D-4CDF-49D5-9D73-CC8EACEBC087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FA95B7D-4CDF-49D5-9D73-CC8EACEBC087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FA95B7D-4CDF-49D5-9D73-CC8EACEBC087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FA95B7D-4CDF-49D5-9D73-CC8EACEBC087}.Release|Any CPU.Build.0 = Release|Any CPU
+		{740DA498-4E23-4190-9BE9-0952C1A378B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740DA498-4E23-4190-9BE9-0952C1A378B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740DA498-4E23-4190-9BE9-0952C1A378B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740DA498-4E23-4190-9BE9-0952C1A378B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99B03C67-0C7D-4E53-9000-FBCB33B97395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B03C67-0C7D-4E53-9000-FBCB33B97395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B03C67-0C7D-4E53-9000-FBCB33B97395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B03C67-0C7D-4E53-9000-FBCB33B97395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA98365-D916-4EE9-91A2-BA79CABD87DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA98365-D916-4EE9-91A2-BA79CABD87DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA98365-D916-4EE9-91A2-BA79CABD87DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA98365-D916-4EE9-91A2-BA79CABD87DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
