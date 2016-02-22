@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PeabodyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PeabodyModelStoreContainer">
+    <EntitySet Name="Computation" EntityType="PeabodyModel.Store.Computation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="History" EntityType="PeabodyModel.Store.History" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Stock" EntityType="PeabodyModel.Store.Stock" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Technical" EntityType="PeabodyModel.Store.Technical" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Computation_Stock_StockID" Association="PeabodyModel.Store.FK_Computation_Stock_StockID">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="Computation" EntitySet="Computation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Computation_Technical_TechnicalID" Association="PeabodyModel.Store.FK_Computation_Technical_TechnicalID">
+      <End Role="Technical" EntitySet="Technical" />
+      <End Role="Computation" EntitySet="Computation" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Computation">
+    <Key>
+      <PropertyRef Name="ComputationID" />
+    </Key>
+    <Property Name="ComputationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TechnicalID" Type="int" Nullable="false" />
+    <Property Name="StockID" Type="int" Nullable="false" />
+    <Property Name="CurrentValue" Type="float" />
+    <Property Name="RealTimeValue" Type="float" />
+    <Property Name="RealTimePrice" Type="money" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="Symbol" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="Symbol" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="OpenPrice" Type="money" Nullable="false" />
+    <Property Name="ClosePrice" Type="money" Nullable="false" />
+    <Property Name="AdustedClosePrice" Type="money" Nullable="false" />
+    <Property Name="PreviousClosePrice" Type="money" Nullable="false" />
+    <Property Name="HighPrice" Type="money" Nullable="false" />
+    <Property Name="LowPrice" Type="money" Nullable="false" />
+    <Property Name="Volume" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Symbol" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Technical">
+    <Key>
+      <PropertyRef Name="TechnicalID" />
+    </Key>
+    <Property Name="TechnicalID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Computation_Stock_StockID">
+    <End Role="Stock" Type="PeabodyModel.Store.Stock" Multiplicity="1" />
+    <End Role="Computation" Type="PeabodyModel.Store.Computation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockID" />
+      </Principal>
+      <Dependent Role="Computation">
+        <PropertyRef Name="StockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Computation_Technical_TechnicalID">
+    <End Role="Technical" Type="PeabodyModel.Store.Technical" Multiplicity="1" />
+    <End Role="Computation" Type="PeabodyModel.Store.Computation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Technical">
+        <PropertyRef Name="TechnicalID" />
+      </Principal>
+      <Dependent Role="Computation">
+        <PropertyRef Name="TechnicalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

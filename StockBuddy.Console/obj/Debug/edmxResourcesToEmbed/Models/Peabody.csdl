@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PeabodyModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PeabodyEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Computations" EntityType="PeabodyModel.Computation" />
+    <EntitySet Name="Histories" EntityType="PeabodyModel.History" />
+    <EntitySet Name="Stocks" EntityType="PeabodyModel.Stock" />
+    <EntitySet Name="Technicals" EntityType="PeabodyModel.Technical" />
+    <AssociationSet Name="FK_Computation_Stock_StockID" Association="PeabodyModel.FK_Computation_Stock_StockID">
+      <End Role="Stock" EntitySet="Stocks" />
+      <End Role="Computation" EntitySet="Computations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Computation_Technical_TechnicalID" Association="PeabodyModel.FK_Computation_Technical_TechnicalID">
+      <End Role="Technical" EntitySet="Technicals" />
+      <End Role="Computation" EntitySet="Computations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Computation">
+    <Key>
+      <PropertyRef Name="ComputationID" />
+    </Key>
+    <Property Name="ComputationID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TechnicalID" Type="Int32" Nullable="false" />
+    <Property Name="StockID" Type="Int32" Nullable="false" />
+    <Property Name="CurrentValue" Type="Double" />
+    <Property Name="RealTimeValue" Type="Double" />
+    <Property Name="RealTimePrice" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Stock" Relationship="PeabodyModel.FK_Computation_Stock_StockID" FromRole="Computation" ToRole="Stock" />
+    <NavigationProperty Name="Technical" Relationship="PeabodyModel.FK_Computation_Technical_TechnicalID" FromRole="Computation" ToRole="Technical" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="Symbol" />
+      <PropertyRef Name="Date" />
+    </Key>
+    <Property Name="Symbol" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OpenPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="ClosePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="AdustedClosePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PreviousClosePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="HighPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="LowPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Volume" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="StockID" />
+    </Key>
+    <Property Name="StockID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Symbol" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Computations" Relationship="PeabodyModel.FK_Computation_Stock_StockID" FromRole="Stock" ToRole="Computation" />
+  </EntityType>
+  <EntityType Name="Technical">
+    <Key>
+      <PropertyRef Name="TechnicalID" />
+    </Key>
+    <Property Name="TechnicalID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Computations" Relationship="PeabodyModel.FK_Computation_Technical_TechnicalID" FromRole="Technical" ToRole="Computation" />
+  </EntityType>
+  <Association Name="FK_Computation_Stock_StockID">
+    <End Role="Stock" Type="PeabodyModel.Stock" Multiplicity="1" />
+    <End Role="Computation" Type="PeabodyModel.Computation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="StockID" />
+      </Principal>
+      <Dependent Role="Computation">
+        <PropertyRef Name="StockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Computation_Technical_TechnicalID">
+    <End Role="Technical" Type="PeabodyModel.Technical" Multiplicity="1" />
+    <End Role="Computation" Type="PeabodyModel.Computation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Technical">
+        <PropertyRef Name="TechnicalID" />
+      </Principal>
+      <Dependent Role="Computation">
+        <PropertyRef Name="TechnicalID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,12 @@
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\StockBuddy.Console.exe.config
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\StockBuddy.Console.exe
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\StockBuddy.Console.pdb
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\AutoMapper.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\EntityFramework.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\AutoMapper.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\EntityFramework.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\obj\Debug\StockBuddy.Console.csprojResolveAssemblyReference.cache
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\obj\Debug\StockBuddy.Console.exe
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Console\obj\Debug\StockBuddy.Console.pdb

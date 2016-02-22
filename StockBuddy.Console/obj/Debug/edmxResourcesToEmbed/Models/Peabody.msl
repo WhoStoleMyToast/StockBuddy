@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PeabodyModelStoreContainer" CdmEntityContainer="PeabodyEntities">
+    <EntitySetMapping Name="Computations">
+      <EntityTypeMapping TypeName="PeabodyModel.Computation">
+        <MappingFragment StoreEntitySet="Computation">
+          <ScalarProperty Name="ComputationID" ColumnName="ComputationID" />
+          <ScalarProperty Name="TechnicalID" ColumnName="TechnicalID" />
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="CurrentValue" ColumnName="CurrentValue" />
+          <ScalarProperty Name="RealTimeValue" ColumnName="RealTimeValue" />
+          <ScalarProperty Name="RealTimePrice" ColumnName="RealTimePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Histories">
+      <EntityTypeMapping TypeName="PeabodyModel.History">
+        <MappingFragment StoreEntitySet="History">
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="OpenPrice" ColumnName="OpenPrice" />
+          <ScalarProperty Name="ClosePrice" ColumnName="ClosePrice" />
+          <ScalarProperty Name="AdustedClosePrice" ColumnName="AdustedClosePrice" />
+          <ScalarProperty Name="PreviousClosePrice" ColumnName="PreviousClosePrice" />
+          <ScalarProperty Name="HighPrice" ColumnName="HighPrice" />
+          <ScalarProperty Name="LowPrice" ColumnName="LowPrice" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stocks">
+      <EntityTypeMapping TypeName="PeabodyModel.Stock">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="StockID" ColumnName="StockID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Technicals">
+      <EntityTypeMapping TypeName="PeabodyModel.Technical">
+        <MappingFragment StoreEntitySet="Technical">
+          <ScalarProperty Name="TechnicalID" ColumnName="TechnicalID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
