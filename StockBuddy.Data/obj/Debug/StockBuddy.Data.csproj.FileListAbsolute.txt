@@ -1,0 +1,16 @@
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\StockBuddy.Data.dll.config
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\StockBuddy.Data.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\StockBuddy.Data.pdb
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\EntityFramework.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\StockBuddy.Common.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\StockBuddy.Core.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\AutoMapper.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\StockBuddy.Common.pdb
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\StockBuddy.Core.pdb
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\EntityFramework.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\bin\Debug\AutoMapper.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\obj\Debug\StockBuddy.Data.csprojResolveAssemblyReference.cache
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\obj\Debug\StockBuddy.Data.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Data\obj\Debug\StockBuddy.Data.pdb

@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAF46BBF-6E2D-47D7-ADB1-6AB343A01AB5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StockBuddy.Data</RootNamespace>
+    <AssemblyName>StockBuddy.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions\DbContextExtension.cs" />
+    <Compile Include="Migrations\201601192212473_IntialMigration.cs" />
+    <Compile Include="Migrations\201601192212473_IntialMigration.Designer.cs">
+      <DependentUpon>201601192212473_IntialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601192335412_AddedRatingProperty.cs" />
+    <Compile Include="Migrations\201601192335412_AddedRatingProperty.Designer.cs">
+      <DependentUpon>201601192335412_AddedRatingProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601200446536_MovedRatingPropertyIntoStockEntity.cs" />
+    <Compile Include="Migrations\201601200446536_MovedRatingPropertyIntoStockEntity.Designer.cs">
+      <DependentUpon>201601200446536_MovedRatingPropertyIntoStockEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601200448284_CreatedStockEntity.cs" />
+    <Compile Include="Migrations\201601200448284_CreatedStockEntity.Designer.cs">
+      <DependentUpon>201601200448284_CreatedStockEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601200452243_AddedNamePropertyToStockEntity.cs" />
+    <Compile Include="Migrations\201601200452243_AddedNamePropertyToStockEntity.Designer.cs">
+      <DependentUpon>201601200452243_AddedNamePropertyToStockEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601232035208_AddedFieldsToEntryStrategy.cs" />
+    <Compile Include="Migrations\201601232035208_AddedFieldsToEntryStrategy.Designer.cs">
+      <DependentUpon>201601232035208_AddedFieldsToEntryStrategy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201601260524588_AddedIsLongPositionProperty.cs" />
+    <Compile Include="Migrations\201601260524588_AddedIsLongPositionProperty.Designer.cs">
+      <DependentUpon>201601260524588_AddedIsLongPositionProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Context\PeabodyDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="YahooDataProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601192212473_IntialMigration.resx">
+      <DependentUpon>201601192212473_IntialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601192335412_AddedRatingProperty.resx">
+      <DependentUpon>201601192335412_AddedRatingProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601200446536_MovedRatingPropertyIntoStockEntity.resx">
+      <DependentUpon>201601200446536_MovedRatingPropertyIntoStockEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601200448284_CreatedStockEntity.resx">
+      <DependentUpon>201601200448284_CreatedStockEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601200452243_AddedNamePropertyToStockEntity.resx">
+      <DependentUpon>201601200452243_AddedNamePropertyToStockEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601232035208_AddedFieldsToEntryStrategy.resx">
+      <DependentUpon>201601232035208_AddedFieldsToEntryStrategy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201601260524588_AddedIsLongPositionProperty.resx">
+      <DependentUpon>201601260524588_AddedIsLongPositionProperty.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StockBuddy.Common\StockBuddy.Common.csproj">
+      <Project>{3325f4b7-1502-4e66-8215-d05d9506b08d}</Project>
+      <Name>StockBuddy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StockBuddy.Core\StockBuddy.Core.csproj">
+      <Project>{aec723e5-484f-4c7e-90d1-85ba678dcfda}</Project>
+      <Name>StockBuddy.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
