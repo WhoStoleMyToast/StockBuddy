@@ -1,0 +1,10 @@
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\bin\Debug\StockBuddy.Core.dll.config
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\bin\Debug\StockBuddy.Core.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\bin\Debug\StockBuddy.Core.pdb
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\bin\Debug\EntityFramework.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\bin\Debug\EntityFramework.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\obj\Debug\StockBuddy.Core.csprojResolveAssemblyReference.cache
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\obj\Debug\StockBuddy.Core.dll
+C:\Users\rmay\Source\Workspaces\Stock Buddy\StockBuddy.Core\obj\Debug\StockBuddy.Core.pdb
