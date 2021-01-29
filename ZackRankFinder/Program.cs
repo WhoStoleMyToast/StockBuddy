@@ -13,10 +13,11 @@ namespace ZackRankFinder
         public static async Task<int> Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
+                          .MinimumLevel.Debug()
                           .MinimumLevel.Override("Microsoft", LogEventLevel.Error)
                           .MinimumLevel.Override("System", LogEventLevel.Error)
                           .WriteTo.Console()
-                          .WriteTo.File("consoleapp.log")
+                          .WriteTo.File($"logs/ranks-{DateTime.Today.DayOfYear}.log", restrictedToMinimumLevel: LogEventLevel.Information)
                           .CreateLogger();
 
             EventId startupEventId = new EventId(1, "startup");
@@ -36,12 +37,12 @@ namespace ZackRankFinder
 
                 try
                 {
-                    logger.LogInformation(startupEventId, "Starting...");
+                    logger.LogDebug(startupEventId, "Starting...");
 
                     var myService = services.GetRequiredService<MyApplication>();
                     var result = await myService.Run();
 
-                    logger.LogInformation(result);
+                    logger.LogDebug(result);
                 }
                 catch (Exception ex)
                 {
@@ -57,7 +58,7 @@ namespace ZackRankFinder
             services.AddHttpClient();
             services.AddTransient<MyApplication>();
             services.AddScoped<ISymbolFetcher, SymbolFetcher>();
-            services.AddScoped<IRankScraper, RankScraper>();
+            services.AddScoped<IRankScraper, JsonRankScraper>();
             services.AddScoped<IRemoteFileSystemContext, FtpRemoteFileSystem>();
             services.AddSingleton<IRemoteFileSystemContext>(x =>
                 new FtpRemoteFileSystem(new RemoteSystemSetting()

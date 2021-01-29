@@ -4,6 +4,7 @@ namespace ZackRankFinder
 {
     public interface IRankScraper
     {
-        Task<int> GetRank(string symbol);
+        Task<Stock> GetStock(string symbol);
+        Task<int> GetRank(Stock stock);
     }
 }

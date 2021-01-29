@@ -25,13 +25,21 @@ namespace ZackRankFinder
 
         public async Task<string> Run()
         {
-            _logger.LogInformation(startEventId, "Application {applicationEvent} at {dateTime}", "Started", DateTime.UtcNow);
+            _logger.LogDebug(startEventId, "Application {applicationEvent} at {dateTime}", "Started", DateTime.UtcNow);
 
-            _logger.LogInformation(symbolEventId, "Fetching symbols...");
+            _logger.LogDebug(symbolEventId, "Fetching symbols...");
             var symbols = await _symbolFetcher.GetSymbols();
-            _logger.LogInformation(symbolEventId, "Fetched {numberOfSymbols} symbols.", symbols.Count());
+            _logger.LogDebug(symbolEventId, "Fetched {numberOfSymbols} symbols.", symbols.Count());
 
-            //var symbols = new List<string> { "AMZN" };
+            var startAt = "AHCO";
+
+            if (!string.IsNullOrWhiteSpace(startAt))
+            {
+                _logger.LogDebug(symbolEventId, "Starting at {startT}.", startAt);
+
+                symbols = symbols.SkipWhile(x => !x.Equals(startAt)).ToList();
+            }
+
             while (symbols?.Any() == true)
             {
                 var symbolsChunk = symbols.Take(10).ToList();
@@ -41,11 +49,13 @@ namespace ZackRankFinder
 
                 foreach (var symbol in symbolsChunk)
                 {
-                    int rank = await _rankScraper.GetRank(symbol);
+                    var stock = await _rankScraper.GetStock(symbol);
+
+                    int rank = await _rankScraper.GetRank(stock);
 
                     if (rank == 1)
                     {
-                        _logger.LogInformation(rankEventId, "{Symbol} - {dateTime}", symbol, DateTime.UtcNow);
+                        _logger.LogInformation(rankEventId, "{Symbol} | {Name} | {LastTrade} | {Link}", symbol, stock.ap_short_name, stock.last, $"https://www.zacks.com/stock/quote/{symbol}?q={symbol}");
                     }
 
                     Thread.Sleep(rand / 2);
@@ -54,6 +64,8 @@ namespace ZackRankFinder
                 Thread.Sleep(rand);
 
                 symbols = symbols.Skip(10).ToList();
+
+                _logger.LogDebug("Remaining: {symbolsLeft}", symbols.Count());
             }
 
             return "done";

@@ -23,9 +23,10 @@ namespace ZackRankFinder
 
             try
             {
+                // Other
                 string otherListed = string.Empty;
                 FtpWebRequest request =
-    (FtpWebRequest)WebRequest.Create("ftp://ftp.nasdaqtrader.com/SymbolDirectory/otherlisted.txt");
+                    (FtpWebRequest)WebRequest.Create("ftp://ftp.nasdaqtrader.com/SymbolDirectory/otherlisted.txt");
                 request.Method = WebRequestMethods.Ftp.DownloadFile;
 
                 using (Stream stream = request.GetResponse().GetResponseStream())
@@ -36,7 +37,24 @@ namespace ZackRankFinder
 
                 otherListed = otherListed.Replace("ACT Symbol|Security Name|Exchange|CQS Symbol|ETF|Round Lot Size|Test Issue|NASDAQ Symbol\r\n", "");
 
-                var stocks = otherListed.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                // Nasdaq
+                string nasdaqListed = string.Empty;
+                FtpWebRequest request2 =
+                    (FtpWebRequest)WebRequest.Create("ftp://ftp.nasdaqtrader.com/SymbolDirectory/nasdaqlisted.txt");
+                request2.Method = WebRequestMethods.Ftp.DownloadFile;
+
+                using (Stream stream = request2.GetResponse().GetResponseStream())
+                using (StreamReader reader = new StreamReader(stream))
+                {
+                    nasdaqListed = await reader.ReadToEndAsync();
+                }
+
+                nasdaqListed = nasdaqListed.Replace("Symbol|Security Name|Market Category|Test Issue|Financial Status|Round Lot Size\r\n", "");
+
+                // Combine
+                var stocksStr = (nasdaqListed + otherListed);
+
+                var stocks = stocksStr.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
                 foreach (var stock in stocks)
                 {
@@ -45,7 +63,7 @@ namespace ZackRankFinder
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "GetSymbols --> {0}");
+                _logger.LogDebug(ex, "GetSymbols --> {0}");
             }
 
             return symbols;

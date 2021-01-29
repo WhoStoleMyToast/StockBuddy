@@ -1,0 +1,3 @@
+[A-Z]+\s[|].*[|]\s\d*\.?\d*$
+(.+)(\[INF\]\s)([A-Z]+)(\s[|].*[|]\s\d*\.?\d*$)
+$3$4 | https://www.zacks.com/stock/quote/$3?q=$3
